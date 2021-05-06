@@ -1,0 +1,26 @@
+html,
+body {
+	font-family: 'Fira Sans', sans-serif;
+	/*font-family: 'Ubuntu', sans-serif;*/
+	background-image: url("Media/box.svg");
+	height:100%;
+}
+
+.main {
+	font-family: 'Ubuntu', sans-serif;
+}
+/*
+
+.logotxt {
+	font-family: 'Shadows Into Light', cursive!important;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
