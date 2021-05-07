@@ -14,9 +14,10 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="Views/gadgetbadget.dark.css">
 
-<title>GadgetBadget Admin Dashboard</title>
+<title>GadgetBadget &#8226 Admin Dashboard</title>
 <script src="Components/jquery-3.2.1.min.js"></script>
-<script src="Components/Home.js"></script>
+<script src="Components/UserClient.js"></script>
+<script src="Components/js.cookie.min.js"></script>
 </head>
 <body class="text-dark">
 	<div class="container py-3 font-light">

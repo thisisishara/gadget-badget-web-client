@@ -1,5 +1,10 @@
 $(document).ready(function(){
 	$("#alertbox").hide();
+	
+	//remove auth cookies
+	if (Cookies.get('gadgetbadget-auth') != undefined){
+		Cookies.remove('gadgetbadget-auth');
+	}
 });
 
 $(document).on("click", "#signin", function (event) {
@@ -22,6 +27,9 @@ $(document).on("click", "#signin", function (event) {
             type: "POST",
             data: $("#loginform").serialize(),
             dataType: "text",
+            xhrFields: {
+    			withCredentials: true
+			},
             complete: function (response, status) {
                 onAuthenticationComplete(response.responseText, status);
             }
@@ -33,11 +41,18 @@ function onAuthenticationComplete(response, status) {
         var resultSet = JSON.parse(response);
         if (resultSet.STATUS.trim() == "AUTHENTICATED") {
             //redirect
-			alert(resultSet["JWT Auth Token"].trim());
+            //test cookie val
+			//alert(resultSet["JWT Auth Token"].trim());
 			$("#alertheading").text("Authenticated.");
 	        $("#alertcontent").text("JWT="+resultSet["JWT Auth Token"].trim());
 			$(".alert").removeClass("alert-secondary").addClass("alert-success");
 	        $("#alertbox").show();
+	        
+	        //set cookie
+	        Cookies.remove('gadgetbadget-auth');
+	        Cookies.set('gadgetbadget-auth', resultSet["JWT Auth Token"].trim(), { expires: 1 });
+	        
+	        window.location.href = "AdminDashboard.jsp";
         } else {
 	        $("#alertheading").text("Authentication Failed");
 	        $("#alertcontent").text(resultSet.MESSAGE.trim());

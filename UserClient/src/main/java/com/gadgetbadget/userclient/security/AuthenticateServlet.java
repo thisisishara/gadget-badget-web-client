@@ -1,9 +1,6 @@
 package com.gadgetbadget.userclient.security;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -51,15 +48,12 @@ public class AuthenticateServlet extends HttpServlet {
 		//test the output
 		System.out.println(serviceResponseJSON.toString());
 		
-		//Inspect the response
+		//Inspect the response and add cookies
 		if (serviceResponseJSON.has("JWT Auth Token")) {
 			Cookie authCookie = new Cookie("auth", serviceResponseJSON.get("JWT Auth Token").getAsString());
 			authCookie.setMaxAge(600);
 	    	response.addCookie(authCookie);
-	    	response.sendRedirect("AdminDashboard.jsp");
-	    	//response.getWriter().append(serviceResponseJSON.toString());
 		}
-		
 		response.getWriter().append(serviceResponseJSON.toString());
 	}
 

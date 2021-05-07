@@ -11,7 +11,7 @@ public class UserServiceComm {
 	private static final String PROTOCOL = "http://";
 	private static final String HOST = "127.0.0.1";
 	private static final String PORT = "8080";
-	private static final String PAYMENT_SERVICE_URI = PROTOCOL + HOST + ":" + PORT + "/UserService/userservice/";
+	private static final String USER_SERVICE_URI = PROTOCOL + HOST + ":" + PORT + "/UserService/userservice/";
 
 	private Client client = null;
 	private WebResource webRes = null;
@@ -20,7 +20,7 @@ public class UserServiceComm {
 	public JsonObject authenticate(JsonObject payload)
 	{
 		client = Client.create();
-		webRes = client.resource("http://localhost:8080/UserService/userservice/security/authenticate");//PAYMENT_SERVICE_URI+"security/authenticate");
+		webRes = client.resource(USER_SERVICE_URI+"security/authenticate");
 
 		String output = webRes//.header("Authorization", SERVICE_TOKEN_FND)
 				.entity(payload.toString(), MediaType.APPLICATION_JSON)
