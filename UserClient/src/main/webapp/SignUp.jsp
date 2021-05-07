@@ -14,12 +14,12 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="Views/gadgetbadget.dark.css">
 
-<title>GadgetBadget Sign Up</title>
+<title>GadgetBadget &#8226 Sign Up</title>
 <!-- <script src="Components/jquery-3.2.1.min.js"></script> -->
 <script src="Components/jquery-3.6.0.min.js"></script>
 <script src="Components/SignUp.js"></script>
 </head>
-<body class="text-dark h-100">
+<body class="text-dark">
 	<div class="container py-3 font-light">
 		<header
 			class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
@@ -32,7 +32,7 @@
 				<a class="me-3 py-2 text-dark text-decoration-none" href="Home.jsp">Home</a>
 			</nav>
 		</header>
-		<main class="h-100">
+		<main class="mb-0 pb-0">
 			<div class="row align-items-center g-5 py-5" id="alertbox">
 				<div class="alert alert-secondary" role="alert">
 					<h4 class="alert-heading">Alert Box.</h4>
@@ -47,8 +47,8 @@
 				</div>
 				<!-- user type selection -->
 				<div class="col-md-4 mb-5">
-					<label for="user" class="form-label">I am a</label> 
-					<select id="user" class="form-select user">
+					<label for="user" class="form-label">I am a</label> <select
+						id="user" class="form-select user">
 						<option selected>Select</option>
 						<option>Funder</option>
 						<option>Researcher</option>
@@ -58,48 +58,37 @@
 
 				<!-- CUNSUMER TYPE SIGNUP -->
 				<form class="row g-3" id="consumerform" name="consumerform">
-					<div class="col-md-6">
-						<label for="inputEmail4" class="form-label">Email</label> <input
-							type="email" class="form-control" id="inputEmail4">
+					<div class="col-12 input-group">
+						<span class="input-group-text" id="consumerun-span">@</span> <input
+							type="text" class="form-control" placeholder="Username"
+							aria-label="Username" aria-describedby="consumerun-span"
+							id="consumerusername">
 					</div>
 					<div class="col-md-6">
-						<label for="inputPassword4" class="form-label">Password</label> <input
-							type="password" class="form-control" id="inputPassword4">
-					</div>
-					<div class="col-12">
-						<label for="inputAddress" class="form-label">Address</label> <input
-							type="text" class="form-control" id="inputAddress"
-							placeholder="1234 Main St">
-					</div>
-					<div class="col-12">
-						<label for="inputAddress2" class="form-label">Address 2</label> <input
-							type="text" class="form-control" id="inputAddress2"
-							placeholder="Apartment, studio, or floor">
+						<input type="email" class="form-control" id="consumeremail"
+							placeholder="Email">
 					</div>
 					<div class="col-md-6">
-						<label for="inputCity" class="form-label">City</label> <input
-							type="text" class="form-control" id="inputCity">
-					</div>
-					<div class="col-md-4">
-						<label for="inputState" class="form-label">State</label> <select
-							id="inputState" class="form-select">
-							<option selected>Choose...</option>
-							<option>...</option>
-						</select>
-					</div>
-					<div class="col-md-2">
-						<label for="inputZip" class="form-label">Zip</label> <input
-							type="text" class="form-control" id="inputZip">
+						<input type="password" class="form-control" id="consumerpassword"
+							placeholder="Password">
 					</div>
 					<div class="col-12">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="gridCheck">
-							<label class="form-check-label" for="gridCheck"> Check me
-								out </label>
+						<div class="input-group">
+							<span class="input-group-text">First and last name</span> <input
+								type="text" aria-label="First name" class="form-control">
+							<input type="text" aria-label="Last name" class="form-control">
 						</div>
 					</div>
+					<div class="col-md-4">
+						<select id="consumergender" class="form-select">
+							<option selected>Select</option>
+							<option>Female</option>
+							<option>Male</option>
+							<option>Other</option>
+						</select>
+					</div>
 					<div class="col-12">
-						<button type="submit" class="btn btn-primary">Sign in</button>
+						<button type="button" class="btn btn-dark" id="consumersignup" value="Sign Up">Create an Account</button>
 					</div>
 				</form>
 

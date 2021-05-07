@@ -1,8 +1,13 @@
 $(document).ready(function(){
 	$("#alertbox").hide();
-	$("#consumerform").hide();
+	//$("#consumerform").hide();
 	$("#researcherform").hide();
 	$("#funderform").hide();
+	
+	//remove auth cookies
+	if (Cookies.get('gadgetbadget-auth') != undefined){
+		Cookies.remove('gadgetbadget-auth');
+	}
 });
 
 $(document).on("click", "#check", function (event) {

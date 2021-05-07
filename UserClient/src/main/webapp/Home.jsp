@@ -14,12 +14,13 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="Views/gadgetbadget.dark.css">
 
-<title>GadgetBadget Sign In</title>
+<title>GadgetBadget &#8226 Sign In</title>
 <script src="Components/jquery-3.2.1.min.js"></script>
 <script src="Components/Home.js"></script>
+<script src="Components/js.cookie.min.js"></script>
 </head>
 <body class="text-dark">
-	<div class="container py-3 font-light">
+	<div class="container pt-3 font-light main-container">
 		<header
 			class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
 			<a href="#"
@@ -33,7 +34,7 @@
 					href="SignUp.jsp">Sign Up</a>
 			</nav>
 		</header>
-		<main>
+		<main class="mb-0 pb-0">
 			<div class="container col-xl-10 col-xxl-8 px-4 py-5 main">
 				<div class="row align-items-center g-5 py-5">
 					<div class="col-lg-7 text-center text-lg-start" id="hero">
@@ -48,8 +49,8 @@
 							class="p-2 border rounded-3 bg-light">
 							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="username"
-									name="username" placeholder="Username"> 
-									<label for="floatingInput">Username</label>
+									name="username" placeholder="Username"> <label
+									for="floatingInput">Username</label>
 							</div>
 							<div class="form-floating mb-3">
 								<input type="password" class="form-control" id="password"

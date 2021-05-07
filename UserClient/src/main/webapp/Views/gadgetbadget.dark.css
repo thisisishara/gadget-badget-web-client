@@ -1,26 +1,38 @@
-html,
+html {
+	font-family: 'Fira Sans', sans-serif;
+	padding:0px !important;
+	margin-bottom:0 !important;
+}
+
 body {
 	font-family: 'Fira Sans', sans-serif;
-	/*font-family: 'Ubuntu', sans-serif;*/
-	background-image: url("Media/box.svg");
-	height:100%;
+	margin-bottom:166px;
+	padding:0px !important;
+	height:100vh;
 }
 
 .main {
 	font-family: 'Ubuntu', sans-serif;
 }
-/*
 
 .logotxt {
 	font-family: 'Shadows Into Light', cursive!important;
 }
 
-footer {
+.footer {
   position: fixed;
   left: 0;
-  bottom: 0;
   width: 100%;
-  background-color: red;
-  color: white;
+  bottom: 0 !important;
+  height:160px;  
+  background-color: white;
+  color: black;
   text-align: center;
+  margin-bottom:0 !important;
+  padding-bottom:0 !important;
+}
+
+.main-container {
+  margin-bottom:0 !important;
+  padding-bottom:0 !important;
 }
