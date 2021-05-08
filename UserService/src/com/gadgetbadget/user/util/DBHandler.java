@@ -15,7 +15,7 @@ import java.sql.DriverManager;
 public class DBHandler {
 	private static final String host = "127.0.0.1";
 	private static final String port = "3306";
-	private static final String database = "gadgetbadget_users";
+	private static final String database = "riwaclientuserservice";
 	private static final String username = "root";
 	private static final String password = "";
 	private Connection conn = null;

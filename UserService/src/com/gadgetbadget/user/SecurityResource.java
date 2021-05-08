@@ -75,14 +75,17 @@ public class SecurityResource {
 			if (! (jwt==null || new JWTHandler().validateToken(jwt))) {
 				return new JsonResponseBuilder().getJsonErrorResponse("Failed to Issue a valid JWT Authentication Token.").toString();
 			}
+			String role = result.get("role").getAsString();
 			
 			// Return the result including the generated JWT
 			result = new JsonObject();
 			result.addProperty("STATUS", DBOpStatus.AUTHENTICATED.toString());
 			result.addProperty("JWT Auth Token", jwt);
+			result.addProperty("ROLE", role);
 			return result.toString();
 			
 		} catch (Exception ex){
+			ex.printStackTrace();
 			return new JsonResponseBuilder().getJsonExceptionResponse("Exception Details: " + ex).toString();
 		}
 	}

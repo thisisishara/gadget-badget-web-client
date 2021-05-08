@@ -1,0 +1,14 @@
+package com.gadgetbadget.userclient.security;
+
+public enum TaskType {
+	GET_ALL_USERS,
+	GET_USERS,
+	POST_USER,
+	PUT_USER,
+	DELETE_USER,
+	CHANGE_PASSWORD,
+	CHANGE_ACCOUNT_STATUS,
+	ACTIVATE_ACCOUNT,
+	DEACTIVATE_ACCOUNT,
+	NONE
+}
