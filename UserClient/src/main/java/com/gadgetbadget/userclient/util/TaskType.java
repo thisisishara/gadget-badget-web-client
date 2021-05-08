@@ -1,4 +1,4 @@
-package com.gadgetbadget.userclient.security;
+package com.gadgetbadget.userclient.util;
 
 public enum TaskType {
 	GET_ALL_USERS,

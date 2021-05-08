@@ -16,7 +16,7 @@ public class UserServiceComm {
 	private Client client = null;
 	private WebResource webRes = null;
 
-	//Authenticate [LOGIN]
+	//Authenticate [LOGIN-POST]
 	public JsonObject authenticate(JsonObject payload)
 	{
 		client = Client.create();
@@ -30,7 +30,7 @@ public class UserServiceComm {
 		return JSONoutput;
 	}
 	
-	//Post User
+	//POST User
 	public JsonObject postUser(String absolutePath, JsonObject payload)
 	{
 		client = Client.create();
@@ -43,8 +43,21 @@ public class UserServiceComm {
 		JsonObject JSONoutput = new JsonParser().parse(output).getAsJsonObject();
 		return JSONoutput;
 	}
+	
+	/*//GET User
+	public JsonObject getUsers(String absolutePath, JsonObject payload)
+	{
+		client = Client.create();
+		webRes = client.resource(USER_SERVICE_URI+absolutePath);
+
+		String output = webRes.header("Authorization", SERVICE_TOKEN_FND)
+				.get(String.class);
+
+		JsonObject JSONoutput = new JsonParser().parse(output).getAsJsonObject();
+		return JSONoutput;
+	}*/
 	/*
-	public JsonObject COPY(String absolutePath, HttpMethod httpMethod, JsonObject payload)
+	public JsonObject getUsers(String absolutePath, HttpMethod httpMethod, JsonObject payload)
 	{
 		client = Client.create();
 		webRes = client.resource(PAYMENT_SERVICE_URI+absolutePath);

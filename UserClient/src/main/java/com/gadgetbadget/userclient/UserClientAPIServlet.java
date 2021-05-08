@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.gadgetbadget.userclient.security.JsonResponseBuilder;
-import com.gadgetbadget.userclient.security.TaskType;
 import com.gadgetbadget.userclient.security.UserServiceComm;
-import com.gadgetbadget.userclient.security.UserType;
+import com.gadgetbadget.userclient.util.JsonResponseBuilder;
+import com.gadgetbadget.userclient.util.TaskType;
+import com.gadgetbadget.userclient.util.UserType;
 import com.google.gson.JsonObject;
 
 @WebServlet("/UserClientAPI")

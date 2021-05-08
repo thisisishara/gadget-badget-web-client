@@ -1,4 +1,4 @@
-package com.gadgetbadget.userclient.security;
+package com.gadgetbadget.userclient.util;
 
 /**
  * This ENUM class defines all the valid types of a response in case a database operation
