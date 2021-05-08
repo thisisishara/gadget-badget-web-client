@@ -25,7 +25,7 @@
 			class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom disable-select">
 			<a href="#"
 				class="d-flex align-items-center text-dark text-decoration-none main"
-				draggable="false"> <img class="mx-2" src="Media/wave.png" alt=""
+				draggable="false"> <img class="mx-2" src="Media/phy.png" alt=""
 				width="40" height="40" draggable="false"> <span class="fs-4">GadgetBadget</span>
 			</a>
 			<nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto ">
@@ -33,15 +33,7 @@
 			</nav>
 		</header>
 		<main class="mb-0 pb-0">
-			<div class="row align-items-center g-5 py-5 disable-select"
-				id="alertbox">
-				<div class="alert alert-secondary" role="alert">
-					<h4 class="alert-heading">Alert Box.</h4>
-					<p>Alert content.</p>
-					<hr>
-					<p class="mb-0">Alert more info.</p>
-				</div>
-			</div>
+			<!-- CONTENT START -->
 			<div class="container col-xl-10 col-xxl-8 px-4 py-0 main">
 				<div class="col-md-6 mb-5 disable-select">
 					<h3 class="mb-2" id="mainheading">Let us know who you are</h3>
@@ -59,31 +51,36 @@
 
 				<!-- CUNSUMER TYPE SIGNUP -->
 				<form class="row g-3" id="consumerform" name="consumerform">
+					<input type="hidden" class="formtask" name="formtask"
+						value="POST_USER"> <input type="hidden" class="usertype"
+						id="usertype" name="usertype" value="Consumer">
 					<div class="col-12 input-group">
 						<span class="input-group-text disable-select" id="consumerun-span">@</span>
 						<input type="text" class="form-control" placeholder="Username"
 							aria-label="Username" aria-describedby="consumerun-span"
-							id="consumerusername">
+							id="consumerusername" name="consumerusername">
 					</div>
 					<div class="col-md-6">
 						<input type="email" class="form-control" id="consumeremail"
-							placeholder="Email">
+							name="consumeremail" placeholder="Email">
 					</div>
 					<div class="col-md-6">
 						<input type="password" class="form-control" id="consumerpassword"
-							placeholder="Password">
+							name="consumerpassword" placeholder="Password">
 					</div>
 					<div class="col-12">
 						<div class="input-group">
 							<span class="input-group-text disable-select">First and
 								last name</span> <input type="text" aria-label="First name"
-								class="form-control" id="consumerfirstname"> <input
-								type="text" aria-label="Last name" class="form-control"
-								id="consumerlastname">
+								class="form-control" id="consumerfirstname"
+								name="consumerfirstname"> <input type="text"
+								aria-label="Last name" class="form-control"
+								id="consumerlastname" name="consumerlastname">
 						</div>
 					</div>
 					<div class="col-md-4">
-						<select id="consumergender" class="form-select">
+						<select id="consumergender" name="consumergender"
+							class="form-select">
 							<option selected>Gender</option>
 							<option>Female</option>
 							<option>Male</option>
@@ -93,43 +90,50 @@
 					<div class="col-md-4">
 						<div class="col-12">
 							<input type="text" class="form-control" id="consumerphone"
-								placeholder="Phone">
+								name="consumerphone" placeholder="Phone">
 						</div>
 					</div>
 					<div class="col-12">
-						<button type="button" class="btn btn-dark" id="consumersignup">Create
-							Account</button>
+						<button type="button" class="btn btn-dark" id="consumersignup"
+							name="consumersignup">Create Account</button>
 					</div>
 				</form>
 
 				<!-- RESEARCHER TYPE SIGNUP -->
 				<form class="row g-3" id="researcherform" name="researcherform">
+					<input type="hidden" class="formtask" name="formtask"
+						value="POST_USER"> <input type="hidden" class="usertype"
+						id="usertype" name="usertype" value="Researcher">
 					<div class="col-12 input-group">
 						<span class="input-group-text disable-select"
 							id="researcherun-span">@</span> <input type="text"
 							class="form-control" placeholder="Username" aria-label="Username"
-							aria-describedby="researcherun-span" id="researcherusername">
+							aria-describedby="researcherun-span" id="researcherusername"
+							name="researcherusername">
 					</div>
 					<div class="col-md-6">
 						<input type="email" class="form-control" id="researcheremail"
-							placeholder="Email">
+							name="researcheremail" placeholder="Email">
 					</div>
 					<div class="col-md-6">
 						<input type="password" class="form-control"
-							id="researcherpassword" placeholder="Password">
+							id="researcherpassword" name="researcherpassword"
+							placeholder="Password">
 					</div>
 					<div class="col-12">
 						<div class="input-group">
 							<span class="input-group-text disable-select">First and
 								last name</span> <input type="text" aria-label="First name"
 								class="form-control" id="researcherfirstname"
-								placeholder="First Name"> <input type="text"
-								aria-label="Last name" class="form-control"
-								id="researchersecondname" placeholder="Second Name">
+								name="researcherfirstname" placeholder="First Name"> <input
+								type="text" aria-label="Last name" class="form-control"
+								id="researchersecondname" name="researchersecondname"
+								placeholder="Second Name">
 						</div>
 					</div>
 					<div class="col-md-4">
-						<select id="researchergender" class="form-select">
+						<select id="researchergender" name="researchergender"
+							class="form-select">
 							<option selected>Gender</option>
 							<option>Female</option>
 							<option>Male</option>
@@ -139,25 +143,26 @@
 					<div class="col-md-4">
 						<div class="col-12">
 							<input type="text" class="form-control" id="researcherphone"
-								placeholder="Phone">
+								name="researcherphone" placeholder="Phone">
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="col-12">
 							<input type="text" class="form-control" id="researcherinstitute"
-								placeholder="Institution">
+								name="researcherinstitute" placeholder="Institution">
 						</div>
 					</div>
 					<div class="col-md-8">
 						<div class="col-12">
-							<select id="researcherfos" class="form-select">
+							<select id="researcherfos" name="researcherfos"
+								class="form-select">
 								<option selected>Field of Study</option>
 								<option>Information Security</option>
 								<option>Artificial Intelligence and Machine Learning</option>
 								<option>ICT for Development</option>
-								<option>Distributed & Parallel Computing</option>
+								<option>Distributed &amp; Parallel Computing</option>
 								<option>Software Engineering</option>
-								<option>Data Communication & Networking</option>
+								<option>Data Communication &amp; Networking</option>
 								<option>Visual Computing</option>
 								<option>Robotics &amp; Intelligent Systems</option>
 								<option>Data Science</option>
@@ -174,43 +179,46 @@
 					<div class="col-md-4">
 						<div class="col-12">
 							<input type="text" class="form-control" id="researcheryoe"
-								placeholder="Years of Experience">
+								name="researcheryoe" placeholder="Years of Experience">
 						</div>
 					</div>
 					<div class="col-12">
-						<button type="button" class="btn btn-dark" id="researchersignup">Create
-							Account</button>
+						<button type="button" class="btn btn-dark" id="researchersignup"
+							name="researchersignup">Create Account</button>
 					</div>
 				</form>
 
 				<!-- FUNDER TYPE SIGNUP -->
 				<form class="row g-3 " id="funderform" name="funderform">
+					<input type="hidden" class="formtask" name="formtask"
+						value="POST_USER"> <input type="hidden" class="usertype"
+						id="usertype" name="usertype" value="Funder">
 					<div class="col-12 input-group">
 						<span class="input-group-text disable-select" id="funderun-span">@</span>
 						<input type="text" class="form-control" placeholder="Username"
 							aria-label="Username" aria-describedby="funderun-span"
-							id="funderusername">
+							id="funderusername" name="funderusername">
 					</div>
 					<div class="col-md-6">
 						<input type="email" class="form-control" id="funderemail"
-							placeholder="Email">
+							name="funderemail" placeholder="Email">
 					</div>
 					<div class="col-md-6">
 						<input type="password" class="form-control" id="funderpassword"
-							placeholder="Password">
+							name="funderpassword" placeholder="Password">
 					</div>
 					<div class="col-12">
 						<div class="input-group">
 							<span class="input-group-text disable-select">First and
 								last name</span> <input type="text" aria-label="First name"
-								class="form-control" id="funderfirstname"> <input
-								type="text" aria-label="Last name" class="form-control"
-								id="fundersecondname">
+								class="form-control" id="funderfirstname" name="funderfirstname">
+							<input type="text" aria-label="Last name" class="form-control"
+								id="fundersecondname" name="fundersecondname">
 						</div>
 					</div>
 					<div class="col-md-4">
-						<select id="fundergender" class="form-select">
-							<option selected>Select</option>
+						<select id="fundergender" name="fundergender" class="form-select">
+							<option selected>Gender</option>
 							<option>Female</option>
 							<option>Male</option>
 							<option>Other</option>
@@ -219,22 +227,41 @@
 					<div class="col-md-4">
 						<div class="col-12">
 							<input type="text" class="form-control" id="funderphone"
-								placeholder="Phone">
+								name="funderphone" placeholder="Phone">
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="col-12">
 							<input type="text" class="form-control" id="funderorg"
-								placeholder="Organization">
+								name="funderorg" placeholder="Organization">
 						</div>
 					</div>
 					<div class="col-12">
-						<button type="button" class="btn btn-dark" id="fundersignup">Create
-							Account</button>
+						<button type="button" class="btn btn-dark" id="fundersignup"
+							name="fundersignup">Create Account</button>
 					</div>
 				</form>
 			</div>
 		</main>
+		<!-- TOAST -->
+		<!-- button type="button" class="btn btn-primary" id="liveToastBtn">Show
+			live toast</button-->
+		<div class="position-fixed top-0 end-0 p-3" style="z-index: 5">
+			<div id="liveToast" class="toast hide bg-danger text-white"
+				role="alert" aria-live="assertive" aria-atomic="true">
+				<div id="liveToastHeaderDiv"
+					class="toast-header bg-danger text-white">
+					<img id="liveToastIcon" src="Media/error_red_sq.png"
+						class="rounded me-2" alt="..." width="25px"> <strong
+						class="me-auto" id="liveToastHeading">Bootstrap Toast</strong> <small
+						id="liveToastTime">Just Now</small>
+					<button type="button" class="btn-close btn-close-white"
+						data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body" id="liveToastBody">Hello, world! This
+					is a toast message.</div>
+			</div>
+		</div>
 		<footer class="pt-2 my-md-5 pt-md-5 border-top disable-select">
 			<div class="row">
 				<div class="col-12 col-md">
@@ -274,5 +301,10 @@
 			</div>
 		</footer>
 	</div>
+	<!-- BOOTSRAP JS CDN-->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+		crossorigin="anonymous"></script>
 </body>
 </html>

@@ -25,8 +25,8 @@
 		class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow dashboard-header disable-select">
 		<a href="#"
 			class="d-flex align-items-center text-dark text-decoration-none main">
-			<img class="mx-2" src="Media/wave.png" alt="" width="40" height="40">
-			<span class="fs-4 text-white">GadgetBadget</span>
+			<img class="mx-2 my-2" src="Media/phywhite.png" alt="" width="40"
+			height="40"> <span class="fs-4 text-white">GadgetBadget</span>
 		</a>
 		<button class="navbar-toggler position-absolute d-md-none collapsed"
 			type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
@@ -88,7 +88,7 @@
 					class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 					<h1 class="h2">User Management</h1>
 				</div>
-				
+
 				<!-- USER TYPE SELECTION ACCORDIAN -->
 				<div class="accordion" id="accordionUserTypeSelect">
 					<div class="accordion-item">
@@ -98,8 +98,10 @@
 								aria-expanded="true" aria-controls="collapseResearches">
 								Researchers</button>
 						</h2>
-						<div id="collapseResearches" class="accordion-collapse collapse show"
-							aria-labelledby="headingResearchers" data-bs-parent="#accordionUserTypeSelect">
+						<div id="collapseResearches"
+							class="accordion-collapse collapse show"
+							aria-labelledby="headingResearchers"
+							data-bs-parent="#accordionUserTypeSelect">
 							<div class="accordion-body">
 								<strong>This is the first item's accordion body.</strong> It is
 								shown by default, until the collapse plugin adds the appropriate
@@ -110,6 +112,10 @@
 								just about any HTML can go within the
 								<code>.accordion-body</code>
 								, though the transition does limit overflow.
+
+
+
+
 							</div>
 						</div>
 					</div>
@@ -121,7 +127,8 @@
 								Funders</button>
 						</h2>
 						<div id="collapseFunders" class="accordion-collapse collapse"
-							aria-labelledby="headingFunders" data-bs-parent="#accordionUserTypeSelect">
+							aria-labelledby="headingFunders"
+							data-bs-parent="#accordionUserTypeSelect">
 							<div class="accordion-body">
 								<strong>This is the second item's accordion body.</strong> It is
 								hidden by default, until the collapse plugin adds the
@@ -143,7 +150,8 @@
 								Consumers</button>
 						</h2>
 						<div id="collapseConsumers" class="accordion-collapse collapse"
-							aria-labelledby="headingConsumers" data-bs-parent="#accordionUserTypeSelect">
+							aria-labelledby="headingConsumers"
+							data-bs-parent="#accordionUserTypeSelect">
 							<div class="accordion-body">
 								<strong>This is the third item's accordion body.</strong> It is
 								hidden by default, until the collapse plugin adds the
@@ -165,7 +173,8 @@
 								Employees</button>
 						</h2>
 						<div id="collapseEmployees" class="accordion-collapse collapse"
-							aria-labelledby="headingEmployees" data-bs-parent="#accordionUserTypeSelect">
+							aria-labelledby="headingEmployees"
+							data-bs-parent="#accordionUserTypeSelect">
 							<div class="accordion-body">
 								<strong>This is the third item's accordion body.</strong> 4
 								<code>.accordion-body</code>
@@ -341,6 +350,25 @@
 			</div>
 		</div>
 	</main>
+	<!-- TOAST -->
+	<!-- button type="button" class="btn btn-primary" id="liveToastBtn">Show
+			live toast</button-->
+	<div class="position-fixed top-0 end-0 p-3" style="z-index: 5">
+		<div id="liveToast" class="toast hide bg-danger text-white"
+			role="alert" aria-live="assertive" aria-atomic="true">
+			<div id="liveToastHeaderDiv"
+				class="toast-header bg-danger text-white">
+				<img id="liveToastIcon" src="Media/error_red_sq.png"
+					class="rounded me-2" alt="..." width="25px"> <strong
+					class="me-auto" id="liveToastHeading">Bootstrap Toast</strong> <small
+					id="liveToastTime">Just Now</small>
+				<button type="button" class="btn-close btn-close-white"
+					data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<div class="toast-body" id="liveToastBody">Hello, world! This
+				is a toast message.</div>
+		</div>
+	</div>
 	<!-- BOOTSRAP JS CDN-->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"

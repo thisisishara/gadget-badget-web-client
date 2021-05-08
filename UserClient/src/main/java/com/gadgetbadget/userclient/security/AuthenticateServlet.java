@@ -17,14 +17,14 @@ import com.google.gson.JsonObject;
 public class AuthenticateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	UserServiceComm userServiceComm;
-    
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AuthenticateServlet() {
-        super();
-        userServiceComm = new UserServiceComm();
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public AuthenticateServlet() {
+		super();
+		userServiceComm = new UserServiceComm();
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -37,24 +37,41 @@ public class AuthenticateServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		//creating payload to send the user service
-		JsonObject payload = new JsonObject();
-		payload.addProperty("username", username);
-		payload.addProperty("password", password);
-		//getting the response
-		JsonObject serviceResponseJSON = userServiceComm.authenticate(payload);
-		//test the output
-		System.out.println(serviceResponseJSON.toString());
-		
-		//Inspect the response and add cookies
-		if (serviceResponseJSON.has("JWT Auth Token")) {
-			Cookie authCookie = new Cookie("auth", serviceResponseJSON.get("JWT Auth Token").getAsString());
-			authCookie.setMaxAge(600);
-	    	response.addCookie(authCookie);
+		try {
+			// getting request parameters
+			String username = request.getParameter("username");
+			String password = request.getParameter("password");
+			
+			System.out.println("UN: "+username +" PW: "+password);
+			
+			// creating PAYLOAD to send the user service
+			JsonObject payload = new JsonObject();
+			payload.addProperty("username", username);
+			payload.addProperty("password", password);
+			
+			// getting the response
+			JsonObject serviceResponseJSON = userServiceComm.authenticate(payload);
+			
+			//test the output
+			System.out.println(serviceResponseJSON.toString());
+
+			//Inspect the response and add cookies
+			if (serviceResponseJSON.has("JWT Auth Token")) {
+				/*Cookie authCookie = new Cookie("auth", serviceResponseJSON.get("JWT Auth Token").getAsString());
+				authCookie.setMaxAge(600);
+				response.addCookie(authCookie);*/
+				
+				response.getWriter().append(serviceResponseJSON.toString());
+			} else {
+				throw new Exception("Error occurred while authenticating.");
+			}
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			System.out.println("Ex: "+ex);
+			JsonObject jsonResponse = new JsonResponseBuilder().getJsonExceptionResponse("Error occurred while authenticating.");
+			response.getWriter().append(jsonResponse.toString());
 		}
-		response.getWriter().append(serviceResponseJSON.toString());
 	}
 
 }

@@ -16,11 +16,25 @@ public class UserServiceComm {
 	private Client client = null;
 	private WebResource webRes = null;
 
-
+	//Authenticate [LOGIN]
 	public JsonObject authenticate(JsonObject payload)
 	{
 		client = Client.create();
 		webRes = client.resource(USER_SERVICE_URI+"security/authenticate");
+
+		String output = webRes//.header("Authorization", SERVICE_TOKEN_FND)
+				.entity(payload.toString(), MediaType.APPLICATION_JSON)
+				.post(String.class);
+
+		JsonObject JSONoutput = new JsonParser().parse(output).getAsJsonObject();
+		return JSONoutput;
+	}
+	
+	//Post User
+	public JsonObject postUser(String absolutePath, JsonObject payload)
+	{
+		client = Client.create();
+		webRes = client.resource(USER_SERVICE_URI+absolutePath);
 
 		String output = webRes//.header("Authorization", SERVICE_TOKEN_FND)
 				.entity(payload.toString(), MediaType.APPLICATION_JSON)
