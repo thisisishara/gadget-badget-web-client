@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	//handle history and page refresh issues
+	window.onunload = function(){};
+	
 	$("#alertbox").hide();
 	
 	//remove auth cookies

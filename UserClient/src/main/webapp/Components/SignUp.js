@@ -1,6 +1,11 @@
 $(document).ready(function(){
+	//handle history and page refresh issues
+	window.onunload = function(){};
+	
+	$("#user").val("Select");
+	
 	$("#alertbox").hide();
-	//$("#consumerform").hide();
+	$("#consumerform").hide();
 	$("#researcherform").hide();
 	$("#funderform").hide();
 	
@@ -17,19 +22,19 @@ $(document).on("click", "#check", function (event) {
 $(document).on("change", "#user", function (event) {
     //alert( $(this).val() );
 	if( $(this).val()=="Consumer") {
-		$('#researcherform').fadeOut();
+		$('#researcherform').hide();
 		$('#consumerform').fadeIn();
-		$("#funderform").fadeOut();
+		$("#funderform").hide();
 	}
 	else if( $(this).val()=="Funder") {
-		$('#researcherform').fadeOut();
-		$('#consumerform').fadeOut();
+		$('#researcherform').hide();
+		$('#consumerform').hide();
 		$("#funderform").fadeIn();
 	}
 	else if( $(this).val()=="Researcher") {
 		$('#researcherform').fadeIn();
-		$('#consumerform').fadeOut();
-		$("#funderform").fadeOut();
+		$('#consumerform').hide();
+		$("#funderform").hide();
 	}
 	else {
 		$('#researcherform').fadeOut();

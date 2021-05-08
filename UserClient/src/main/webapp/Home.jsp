@@ -14,7 +14,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="Views/gadgetbadget.dark.css">
 
-<title>GadgetBadget &#8226 Sign In</title>
+<title>GadgetBadget &#8226; Sign In</title>
 <script src="Components/jquery-3.2.1.min.js"></script>
 <script src="Components/Home.js"></script>
 <script src="Components/js.cookie.min.js"></script>
@@ -22,7 +22,7 @@
 <body class="text-dark">
 	<div class="container pt-3 font-light main-container">
 		<header
-			class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+			class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom disable-select">
 			<a href="#"
 				class="d-flex align-items-center text-dark text-decoration-none main">
 				<img class="mx-2" src="Media/wave.png" alt="" width="40" height="40">
@@ -37,7 +37,7 @@
 		<main class="mb-0 pb-0">
 			<div class="container col-xl-10 col-xxl-8 px-4 py-5 main">
 				<div class="row align-items-center g-5 py-5">
-					<div class="col-lg-7 text-center text-lg-start" id="hero">
+					<div class="col-lg-7 text-center text-lg-start disable-select" id="hero">
 						<h1 class="display-4 fw-bold lh-1 mb-3">Hey, there!</h1>
 						<p class="col-lg-10 fs-4">Glad to see an innovative mind. go
 							ahead and get signed in to get started. If you don't own a
@@ -61,12 +61,12 @@
 								class="btn btn-dark btn-lg px-4 me-sm-3 fw-bold text-white w-100"
 								type="button" id="signin" name="signin">Sign In</button>
 							<hr class="my-2">
-							<small class="text-muted">Please contact the
+							<small class="text-muted disable-select">Please contact the
 								Administrator if there are login-related issues.</small>
 						</form>
 					</div>
 				</div>
-				<div class="row align-items-center g-5 py-5" id="alertbox">
+				<div class="row align-items-center g-5 py-5 disable-select" id="alertbox">
 					<div class="alert alert-secondary" role="alert">
 						<h4 class="alert-heading" id="alertheading">Alert!</h4>
 						<p id="alertcontent">Alert content.</p>
@@ -76,7 +76,7 @@
 				</div>
 			</div>
 		</main>
-		<footer class="pt-2 my-md-5 pt-md-5 border-top">
+		<footer class="pt-2 my-md-5 pt-md-5 border-top disable-select">
 			<div class="row">
 				<div class="col-12 col-md">
 					<small class="d-block mb-3 text-muted">&copy; 2021
