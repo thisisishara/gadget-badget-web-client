@@ -59,7 +59,7 @@ $(document).on("click", "#consumersignup", function (event) {
     //form validation
     var validationStatus = validateConsumerForm();
     if (validationStatus != true) {
-        buildToast("bg-danger", "Couldn't Creating the Account", validationStatus, "", "Media/error_red_sq.png")
+        buildToast("bg-danger", "Couldn't Creating the Account", validationStatus, "", "Media/error_red_sq.png");
         $('.toast').toast('show');
         return;
     }
@@ -82,17 +82,17 @@ function onConsumerSaveComplete(response, status) {
         var resultSet = JSON.parse(response);
 
         if (resultSet.STATUS.trim() == "SUCCESSFUL") {
-            buildToast("bg-success", "Signing up completed.", "Account created successfully. Please sign in to start using your new account.", "", "Media/check_green.png")
+            buildToast("bg-success", "Signing up completed.", "Account created successfully. Please sign in to start using your new account.", "", "Media/check_green.png");
             $('.toast').toast('show');
         } else {
-            buildToast("bg-danger", "Error Occurred", resultSet.MESSAGE.trim(), "", "Media/error_red_sq.png")
+            buildToast("bg-danger", "Error Occurred", resultSet.MESSAGE.trim(), "", "Media/error_red_sq.png");
             $('.toast').toast('show');
         }
     } else if (status == "error") {
-        buildToast("bg-danger", "Couldn't Creating the Account", "Error occurred while saving the account details.", "", "Media/error_red_sq.png")
+        buildToast("bg-danger", "Couldn't Create the Account", "Error occurred while saving the account details.", "", "Media/error_red_sq.png");
         $('.toast').toast('show');
     } else {
-        buildToast("bg-danger", "Couldn't Creating the Account", "Unknown Error occurred while creating the account.", "", "Media/error_red_sq.png")
+        buildToast("bg-danger", "Couldn't Create the Account", "Unknown Error occurred while creating the account.", "", "Media/error_red_sq.png");
         $('.toast').toast('show');
     }
     $("#consumerform")[0].reset();
@@ -106,7 +106,7 @@ $(document).on("click", "#fundersignup", function (event) {
     //form validation
     var validationStatus = validateFunderForm();
     if (validationStatus != true) {
-        buildToast("bg-danger", "Couldn't Creating the Account", validationStatus, "", "Media/error_red_sq.png")
+        buildToast("bg-danger", "Couldn't Creating the Account", validationStatus, "", "Media/error_red_sq.png");
         $('.toast').toast('show');
         return;
     }
@@ -129,17 +129,17 @@ function onFunderSaveComplete(response, status) {
         var resultSet = JSON.parse(response);
 
         if (resultSet.STATUS.trim() == "SUCCESSFUL") {
-            buildToast("bg-success", "Signing up completed.", "Account created successfully. Please sign in to start using your new account.", "", "Media/check_green.png")
+            buildToast("bg-success", "Signing up completed.", "Account created successfully. Please sign in to start using your new account.", "", "Media/check_green.png");
             $('.toast').toast('show');
         } else {
-            buildToast("bg-danger", "Error Occurred", resultSet.MESSAGE.trim(), "", "Media/error_red_sq.png")
+            buildToast("bg-danger", "Error Occurred", resultSet.MESSAGE.trim(), "", "Media/error_red_sq.png");
             $('.toast').toast('show');
         }
     } else if (status == "error") {
-        buildToast("bg-danger", "Couldn't Creating the Account", "Error occurred while saving the account details.", "", "Media/error_red_sq.png")
+        buildToast("bg-danger", "Couldn't Create the Account", "Error occurred while saving the account details.", "", "Media/error_red_sq.png");
         $('.toast').toast('show');
     } else {
-        buildToast("bg-danger", "Couldn't Creating the Account", "Unknown Error occurred while creating the account.", "", "Media/error_red_sq.png")
+        buildToast("bg-danger", "Couldn't Create the Account", "Unknown Error occurred while creating the account.", "", "Media/error_red_sq.png");
         $('.toast').toast('show');
     }
     $("#funderform")[0].reset();
@@ -153,7 +153,7 @@ $(document).on("click", "#researchersignup", function (event) {
     //form validation
     var validationStatus = validateResearcherForm();
     if (validationStatus != true) {
-        buildToast("bg-danger", "Couldn't Creating the Account", validationStatus, "", "Media/error_red_sq.png")
+        buildToast("bg-danger", "Couldn't Creating the Account", validationStatus, "", "Media/error_red_sq.png");
         $('.toast').toast('show');
         return;
     }
@@ -176,17 +176,17 @@ function onResearcherSaveComplete(response, status) {
         var resultSet = JSON.parse(response);
 
         if (resultSet.STATUS.trim() == "SUCCESSFUL") {
-            buildToast("bg-success", "Signing up completed.", "Account created successfully. Please sign in to start using your new account.", "", "Media/check_green.png")
+            buildToast("bg-success", "Signing up completed.", "Account created successfully. Please sign in to start using your new account.", "", "Media/check_green.png");
             $('.toast').toast('show');
         } else {
-            buildToast("bg-danger", "Error Occurred", resultSet.MESSAGE.trim(), "", "Media/error_red_sq.png")
+            buildToast("bg-danger", "Error Occurred", resultSet.MESSAGE.trim(), "", "Media/error_red_sq.png");
             $('.toast').toast('show');
         }
     } else if (status == "error") {
-        buildToast("bg-danger", "Couldn't Creating the Account", "Error occurred while saving the account details.", "", "Media/error_red_sq.png")
+        buildToast("bg-danger", "Couldn't Create the Account", "Error occurred while saving the account details.", "", "Media/error_red_sq.png");
         $('.toast').toast('show');
     } else {
-        buildToast("bg-danger", "Couldn't Creating the Account", "Unknown Error occurred while creating the account.", "", "Media/error_red_sq.png")
+        buildToast("bg-danger", "Couldn't Create the Account", "Unknown Error occurred while creating the account.", "", "Media/error_red_sq.png");
         $('.toast').toast('show');
     }
     $("#researcherform")[0].reset();

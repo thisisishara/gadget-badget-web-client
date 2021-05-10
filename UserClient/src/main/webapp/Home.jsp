@@ -14,6 +14,9 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="Views/gadgetbadget.dark.css">
 
+<!-- Favicons -->
+<link rel="icon" href="Media/phywhite.png" sizes="32x32" type="image/png">
+
 <title>GadgetBadget &#8226; Sign In</title>
 <script src="Components/jquery-3.2.1.min.js"></script>
 <script src="Components/Home.js"></script>

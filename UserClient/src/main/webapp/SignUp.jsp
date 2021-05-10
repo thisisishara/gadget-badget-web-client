@@ -14,6 +14,9 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="Views/gadgetbadget.dark.css">
 
+<!-- Favicons -->
+<link rel="icon" href="Media/phywhite.png" sizes="32x32" type="image/png">
+
 <title>GadgetBadget &#8226; Sign Up</title>
 <!-- <script src="Components/jquery-3.2.1.min.js"></script> -->
 <script src="Components/jquery-3.6.0.min.js"></script>
@@ -52,7 +55,7 @@
 				<!-- CUNSUMER TYPE SIGNUP -->
 				<form class="row g-3" id="consumerform" name="consumerform">
 					<input type="hidden" class="formtask" name="formtask"
-						value="POST_USER"> <input type="hidden" class="usertype"
+						value="USERS"> <input type="hidden" class="usertype"
 						id="usertype" name="usertype" value="Consumer">
 					<div class="col-12 input-group">
 						<span class="input-group-text disable-select" id="consumerun-span">@</span>
@@ -102,7 +105,7 @@
 				<!-- RESEARCHER TYPE SIGNUP -->
 				<form class="row g-3" id="researcherform" name="researcherform">
 					<input type="hidden" class="formtask" name="formtask"
-						value="POST_USER"> <input type="hidden" class="usertype"
+						value="USERS"> <input type="hidden" class="usertype"
 						id="usertype" name="usertype" value="Researcher">
 					<div class="col-12 input-group">
 						<span class="input-group-text disable-select"
@@ -191,7 +194,7 @@
 				<!-- FUNDER TYPE SIGNUP -->
 				<form class="row g-3 " id="funderform" name="funderform">
 					<input type="hidden" class="formtask" name="formtask"
-						value="POST_USER"> <input type="hidden" class="usertype"
+						value="USERS"> <input type="hidden" class="usertype"
 						id="usertype" name="usertype" value="Funder">
 					<div class="col-12 input-group">
 						<span class="input-group-text disable-select" id="funderun-span">@</span>

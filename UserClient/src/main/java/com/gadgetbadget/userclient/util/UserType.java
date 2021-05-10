@@ -1,10 +1,11 @@
 package com.gadgetbadget.userclient.util;
 
 public enum UserType {
-	CONSUMER,
-	FUNDER,
-	RESEARCHER,
 	ADMIN,
-	EMPLOYEE,
-	NONE
+	EMPLY,
+	FNMGR,
+	RSCHR,
+	FUNDR,
+	CNSMR,
+	INVLD
 }

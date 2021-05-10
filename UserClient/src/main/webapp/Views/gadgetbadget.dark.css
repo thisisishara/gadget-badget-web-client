@@ -109,6 +109,56 @@ body {
   text-transform: uppercase;
 }
 
-.navbar {
-	/*height:70px !important;*/
+/*
+ * ACCORDIAN STYLES
+ */
+.accordion-button:after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+/*
+ * TABLE STYLES
+ */ 
+table tr:first-child th:first-child {
+  border-top-left-radius: 8px;
+}
+
+/* top-right border-radius */
+table tr:first-child th:last-child {
+  border-top-right-radius: 8px;
+}
+
+/* bottom-left border-radius */
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+/* bottom-right border-radius */
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+table tr:last-child{
+  border-bottom:0px;
+}
+
+table tr td:first-child, table tr th:first-child{
+  padding-left:15px;
+}
+
+table tr td:last-child, table tr th:last-child{
+  padding-right:15px;
+}
+
+/*
+ * Hide Table Overflow and Scrollbars
+ */
+ #employeeAccountsGrid, #consumerAccountsGrid, #funderAccountsGrid, #researcherAccountsGrid {
+ 	overflow-x: auto;
+ 	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* FIREFOX */
+ }
+ 
+ #employeeAccountsGrid::-webkit-scrollbar, #consumerAccountsGrid::-webkit-scrollbar, #funderAccountsGrid::-webkit-scrollbar, #researcherAccountsGrid::-webkit-scrollbar {
+  display: none; /* CHROME */
 }

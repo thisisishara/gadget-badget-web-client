@@ -30,6 +30,19 @@ public class UserServiceComm {
 		return JSONoutput;
 	}
 	
+	//GET User
+	public JsonObject getUsers(String absolutePath, String AuthToken)
+	{
+		client = Client.create();
+		webRes = client.resource(USER_SERVICE_URI+absolutePath);
+
+		String output = webRes.header("Authorization", "JWT " + AuthToken)
+				.get(String.class);
+
+		JsonObject JSONoutput = new JsonParser().parse(output).getAsJsonObject();
+		return JSONoutput;
+	}
+	
 	//POST User
 	public JsonObject postUser(String absolutePath, JsonObject payload)
 	{
@@ -44,18 +57,33 @@ public class UserServiceComm {
 		return JSONoutput;
 	}
 	
-	/*//GET User
-	public JsonObject getUsers(String absolutePath, JsonObject payload)
+	//PUT User
+	public JsonObject putUser(String absolutePath, JsonObject payload, String AuthToken)
 	{
 		client = Client.create();
 		webRes = client.resource(USER_SERVICE_URI+absolutePath);
 
-		String output = webRes.header("Authorization", SERVICE_TOKEN_FND)
-				.get(String.class);
+		String output = webRes.header("Authorization", "JWT " + AuthToken)
+				.entity(payload.toString(), MediaType.APPLICATION_JSON)
+				.put(String.class);
 
 		JsonObject JSONoutput = new JsonParser().parse(output).getAsJsonObject();
 		return JSONoutput;
-	}*/
+	}
+	
+	//DELETE User
+	public JsonObject deleteUser(String absolutePath, JsonObject payload, String AuthToken)
+	{
+		client = Client.create();
+		webRes = client.resource(USER_SERVICE_URI+absolutePath);
+
+		String output = webRes.header("Authorization", "JWT " + AuthToken)
+				.entity(payload.toString(), MediaType.APPLICATION_JSON)
+				.delete(String.class);
+
+		JsonObject JSONoutput = new JsonParser().parse(output).getAsJsonObject();
+		return JSONoutput;
+	}
 	/*
 	public JsonObject getUsers(String absolutePath, HttpMethod httpMethod, JsonObject payload)
 	{

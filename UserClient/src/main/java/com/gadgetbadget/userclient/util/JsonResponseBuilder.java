@@ -19,55 +19,62 @@ public class JsonResponseBuilder {
 
 	}
 
-	public JsonObject getJsonErrorResponse( String message) {
+	public JsonObject getJsonErrorResponse(String message) {
 		jsonObject = new JsonObject();
 		jsonObject.addProperty("STATUS", OpStatus.ERROR.toString());
 		jsonObject.addProperty("MESSAGE", message);
 		return jsonObject;
 	}
-	
-	public JsonObject getJsonExceptionResponse( String message) {
+
+	public JsonObject getJsonExceptionResponse(String message) {
 		jsonObject = new JsonObject();
 		jsonObject.addProperty("STATUS", OpStatus.EXCEPTION.toString());
 		jsonObject.addProperty("MESSAGE", message);
 		return jsonObject;
 	}
-	
-	public JsonObject getJsonUnknownResponse( String message) {
+
+	public JsonObject getJsonUnknownResponse(String message) {
 		jsonObject = new JsonObject();
 		jsonObject.addProperty("STATUS", OpStatus.UNKNOWN.toString());
 		jsonObject.addProperty("MESSAGE", message);
 		return jsonObject;
 	}
-	
-	public JsonObject getJsonUnauthorizedResponse( String message) {
+
+	public JsonObject getJsonUnauthorizedResponse(String message) {
 		jsonObject = new JsonObject();
 		jsonObject.addProperty("STATUS", OpStatus.UNAUTHORIZED.toString());
 		jsonObject.addProperty("MESSAGE", message);
 		return jsonObject;
 	}
-	
+
 	public JsonObject getJsonSuccessResponse( String message) {
 		jsonObject = new JsonObject();
 		jsonObject.addProperty("STATUS", OpStatus.SUCCESSFUL.toString());
 		jsonObject.addProperty("MESSAGE", message);
 		return jsonObject;
 	}
-	
-	public JsonObject getJsonFailedResponse( String message) {
+
+	public JsonObject getJsonFailedResponse(String message) {
 		jsonObject = new JsonObject();
 		jsonObject.addProperty("STATUS", OpStatus.UNSUCCESSFUL.toString());
 		jsonObject.addProperty("MESSAGE", message);
 		return jsonObject;
 	}
-	
-	public JsonObject getJsonProhibitedResponse( String message) {
+
+	public JsonObject getJsonProhibitedResponse(String message) {
 		jsonObject = new JsonObject();
 		jsonObject.addProperty("STATUS", OpStatus.PROHIBITED.toString());
 		jsonObject.addProperty("MESSAGE", message);
 		return jsonObject;
 	}
-	
+
+	public JsonObject getJsonNoAuthorizationResponse(String message) {
+		jsonObject = new JsonObject();
+		jsonObject.addProperty("STATUS", OpStatus.NOAUTH.toString());
+		jsonObject.addProperty("MESSAGE", message);
+		return jsonObject;
+	}
+
 	/**
 	 * This method returns a single JSON object which acts as a wrapper object to a passed JSON Array along
 	 * with status of the operation. 
