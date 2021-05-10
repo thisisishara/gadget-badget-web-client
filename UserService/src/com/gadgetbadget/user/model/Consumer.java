@@ -70,7 +70,7 @@ public class Consumer extends User{
 				return new JsonResponseBuilder().getJsonErrorResponse("Operation has been terminated due to a database connectivity issue.");
 			}
 
-			String query = "SELECT u.user_id, u.role_id, u.first_name, u.last_name, u.gender, u.primary_email, u.primary_phone FROM `user` u, `consumer` c WHERE u.user_id=c.consumer_id;";
+			String query = "SELECT u.user_id, u.username, u.password, u.role_id, u.first_name, u.last_name, u.gender, u.primary_email, u.primary_phone FROM `user` u, `consumer` c WHERE u.user_id=c.consumer_id;";
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 
@@ -82,6 +82,8 @@ public class Consumer extends User{
 			{
 				JsonObject recordObject = new JsonObject();
 				recordObject.addProperty("user_id", rs.getString("user_id"));
+				recordObject.addProperty("username", rs.getString("username"));
+				recordObject.addProperty("password", rs.getString("password"));
 				recordObject.addProperty("first_name", rs.getString("first_name"));
 				recordObject.addProperty("last_name", rs.getString("last_name"));
 				recordObject.addProperty("gender", rs.getString("gender"));

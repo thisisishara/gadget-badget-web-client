@@ -73,7 +73,7 @@ public class Researcher  extends User{
 				return new JsonResponseBuilder().getJsonErrorResponse("Operation has been terminated due to a database connectivity issue.");
 			}
 
-			String query = "SELECT u.user_id, u.role_id, u.first_name, u.last_name, u.gender, u.primary_email, u.primary_phone, r.institution, r.field_of_study , r.years_of_exp  FROM `user` u, `researcher` r WHERE u.user_id = r.researcher_id;";
+			String query = "SELECT u.user_id, u.username, u.password, u.role_id, u.first_name, u.last_name, u.gender, u.primary_email, u.primary_phone, r.institution, r.field_of_study , r.years_of_exp  FROM `user` u, `researcher` r WHERE u.user_id = r.researcher_id;";
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 
@@ -85,6 +85,8 @@ public class Researcher  extends User{
 			{
 				JsonObject recordObject = new JsonObject();
 				recordObject.addProperty("user_id", rs.getString("user_id"));
+				recordObject.addProperty("username", rs.getString("username"));
+				recordObject.addProperty("password", rs.getString("password"));
 				recordObject.addProperty("first_name", rs.getString("first_name"));
 				recordObject.addProperty("last_name", rs.getString("last_name"));
 				recordObject.addProperty("gender", rs.getString("gender"));
