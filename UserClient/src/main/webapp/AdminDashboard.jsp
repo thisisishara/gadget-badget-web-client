@@ -23,7 +23,7 @@
 <script src="Components/UserClient.js"></script>
 <script src="Components/js.cookie.min.js"></script>
 </head>
-<body class="text-dark">
+<body class="text-dark herodash">
 	<!-- MAIN HEADER -->
 	<header
 		class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow dashboard-header disable-select"
@@ -79,16 +79,10 @@
 					class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 					<h1 class="h2">Dashboard</h1>
 					<div class="btn-toolbar mb-2 mb-md-0">
-						<div class="btn-group me-2">
-							<button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-							<button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-						</div>
-						<button type="button"
-							class="btn btn-sm btn-outline-secondary dropdown-toggle">
-							<span data-feather="calendar"></span> This week
-						</button>
+						<!-- DASH HEADER CONTENTS -->
 					</div>
 				</div>
+				<div>Refer "User Management" link to Manage Users.</div>
 			</div>
 			<div class="row sidebarpage" id="adminusermgmt">
 				<div
@@ -382,8 +376,7 @@
 										<input type="checkbox" class="btn-check btn-block w-100"
 											id="consumershowpasswords" autocomplete="off"> <label
 											class="btn btn-danger" for="consumershowpasswords"><span><img
-												id="consumershowpasswordicon" src="Media/eye.png"
-												alt="..." /></span></label>
+												id="consumershowpasswordicon" src="Media/eye.png" alt="..." /></span></label>
 									</div>
 									<div class="col-12">
 										<div class="input-group">
@@ -478,8 +471,7 @@
 										<input type="checkbox" class="btn-check btn-block w-100"
 											id="employeeshowpasswords" autocomplete="off"> <label
 											class="btn btn-danger" for="employeeshowpasswords"><span><img
-												id="employeeshowpasswordicon" src="Media/eye.png"
-												alt="..." /></span></label>
+												id="employeeshowpasswordicon" src="Media/eye.png" alt="..." /></span></label>
 									</div>
 									<div class="col-12">
 										<div class="input-group">
@@ -564,15 +556,18 @@
 					class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 					<h1 class="h2">Account Security</h1>
 					<div class="btn-toolbar mb-2 mb-md-0">
-						<div class="btn-group me-2">
+						<!-- <div class="btn-group me-2">
 							<button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
 							<button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
 						</div>
 						<button type="button"
 							class="btn btn-sm btn-outline-secondary dropdown-toggle">
 							<span data-feather="calendar"></span> This week
-						</button>
+						</button> -->
 					</div>
+				</div>
+				<div class="accountsGrid" id="accountsGrid">
+					<!-- DYNAMICALLY GENERATED ACCOUNT LIST TABLE -->
 				</div>
 			</div>
 			<div class="row sidebarpage" id="adminprofsett">
@@ -580,16 +575,17 @@
 					class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 					<h1 class="h2">Profile Settings</h1>
 					<div class="btn-toolbar mb-2 mb-md-0">
-						<div class="btn-group me-2">
+						<!-- <div class="btn-group me-2">
 							<button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
 							<button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
 						</div>
 						<button type="button"
 							class="btn btn-sm btn-outline-secondary dropdown-toggle">
 							<span data-feather="calendar"></span> This week
-						</button>
+						</button> -->
 					</div>
 				</div>
+				<div>Profile Settings are all good.</div>
 			</div>
 		</div>
 	</main>

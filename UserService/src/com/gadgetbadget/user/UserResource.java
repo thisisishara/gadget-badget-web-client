@@ -336,7 +336,12 @@ public class UserResource {
 			}
 
 			JsonObject employeeJSON_parsed = new JsonParser().parse(employeeJSON).getAsJsonObject();
-
+			
+			// Prohibit deactivating the SUPER ADMIN
+			if(employeeJSON_parsed.get("user_id").getAsString().equals(SUPER_ADMIN) && !(current_user_id.equals(SUPER_ADMIN))) {
+				return new JsonResponseBuilder().getJsonProhibitedResponse("Deleting the SUPER_ADMIN Account is NOT Allowed!.").toString();
+			}
+			
 			// Prohibit NON ADMIN EMPLY users from altering other user accounts
 			if(!employeeJSON_parsed.has("employees")) {
 				if(! (securityContext.isUserInRole(UserType.ADMIN.toString()))) {
@@ -394,7 +399,12 @@ public class UserResource {
 			}
 
 			JsonObject employeeJSON_parsed = new JsonParser().parse(employeeJSON).getAsJsonObject();
-
+			
+			// Prohibit deactivating the SUPER ADMIN
+			if(employeeJSON_parsed.get("user_id").getAsString().equals(SUPER_ADMIN)) {
+				return new JsonResponseBuilder().getJsonProhibitedResponse("Deleting the SUPER_ADMIN Account is NOT Allowed!.").toString();
+			}
+			
 			// Prohibit NON ADMIN EMPLY users from deleting other user accounts
 			if(!employeeJSON_parsed.has("employees")) {
 				if(! (securityContext.isUserInRole(UserType.ADMIN.toString()))) {

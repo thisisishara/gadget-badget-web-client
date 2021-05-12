@@ -56,10 +56,35 @@ function loadAdminUMContents() {
 
 function loadAdminASContents() {
     $("#adminaccsec").fadeIn();
+    loadAccountList();
 }
 
 function loadAdminPSContents() {
     $("#adminprofsett").fadeIn();
+}
+
+//LOAD ACCOUNT LIST TO ACCOUNT SECURITY PAGE
+function loadAccountList() {
+    $.ajax(
+        {
+            url: "AccountsAPI",
+            type: "GET",
+            dataType: "text",
+            complete: function (response, status) {
+                onLoadALComplete(response.responseText, status);
+            }
+        });
+}
+
+//ACCOUNT TABLE LOAD RESPONSE HANDLING
+function onLoadALComplete(response, status) {
+    if (status == "success") {
+        var resultSet = JSON.parse(response);
+
+        $("#accountsGrid").html(resultSet.ACC);
+    } else {
+        $("#accountsGrid").html("Couldn't retrieve the list of accounts.");
+    }
 }
 
 //LOAD USER ACCOUNT DETAILS
@@ -684,6 +709,78 @@ function onEmployeeDeleteComplete(response, status) {
         $('.toast').toast('show');
     } else {
         buildToast("bg-danger", "Couldn't Delete the Account", "Unknown Error occurred while deleting the account.", "", "Media/error_red_sq.png");
+        $('.toast').toast('show');
+    }
+}
+
+//DELETE ACCOUNT
+$(document).on("click", "#accountdelete", function (event) {
+    $.ajax(
+        {
+            url: "AccountsAPI",
+            type: "DELETE",
+            data: "user_id=" + $(this).data("accountid"),
+            dataType: "text",
+            complete: function (response, status) {
+                onAccountDeleteComplete(response.responseText, status);
+                }
+         });
+});
+
+//DELETE-ACCOUNT RESPONSE HANDLING
+function onAccountDeleteComplete(response, status) {
+    if (status == "success") {
+        var resultSet = JSON.parse(response);
+
+        if (resultSet.STATUS.trim() == "SUCCESSFUL") {
+            buildToast("bg-success", "Account Deleted.", "Account deleted successfully. Check the list of accounts to see changes.", "", "Media/check_green.png");
+            $('.toast').toast('show');
+            $("#accountsGrid").html(resultSet.ACC);
+        } else {
+            buildToast("bg-danger", "Error Occurred", resultSet.MESSAGE.trim(), "", "Media/error_red_sq.png");
+            $('.toast').toast('show');
+        }
+    } else if (status == "error") {
+        buildToast("bg-danger", "Couldn't Delete the Account", "Error occurred while deleting the account.", "", "Media/error_red_sq.png");
+        $('.toast').toast('show');
+    } else {
+        buildToast("bg-danger", "Couldn't Delete the Account", "Unknown Error occurred while deleting the account.", "", "Media/error_red_sq.png");
+        $('.toast').toast('show');
+    }
+}
+
+//DEACTIVATE ACCOUNT
+$(document).on("click", "#accountactivation", function (event) {
+    $.ajax(
+        {
+            url: "AccountsAPI",
+            type: "PUT",
+            data: "user_id=" + $(this).data("accountid") + "&isdeactivated=" + $(this).data("isdeactivated"),
+            dataType: "text",
+            complete: function (response, status) {
+                onAccountStatusUpdateComplete(response.responseText, status);
+                }
+         });
+});
+
+//DEACTIVATE-ACCOUNT RESPONSE HANDLING
+function onAccountStatusUpdateComplete(response, status) {
+    if (status == "success") {
+        var resultSet = JSON.parse(response);
+
+        if (resultSet.STATUS.trim() == "SUCCESSFUL") {
+            buildToast("bg-success", "Account Status Updated.", "Account status updated successfully. Check the list of accounts to see changes.", "", "Media/check_green.png");
+            $('.toast').toast('show');
+            $("#accountsGrid").html(resultSet.ACC);
+        } else {
+            buildToast("bg-danger", "Error Occurred", resultSet.MESSAGE.trim(), "", "Media/error_red_sq.png");
+            $('.toast').toast('show');
+        }
+    } else if (status == "error") {
+        buildToast("bg-danger", "Couldn't Update the Status", "Error occurred while setting the account status.", "", "Media/error_red_sq.png");
+        $('.toast').toast('show');
+    } else {
+        buildToast("bg-danger", "Couldn't Update the Status", "Unknown Error occurred while setting the account status.", "", "Media/error_red_sq.png");
         $('.toast').toast('show');
     }
 }

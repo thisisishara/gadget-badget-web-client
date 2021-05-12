@@ -22,7 +22,7 @@
 <script src="Components/jquery-3.6.0.min.js"></script>
 <script src="Components/SignUp.js"></script>
 </head>
-<body class="text-dark">
+<body class="text-dark herosignup">
 	<div class="container py-3 font-light">
 		<header
 			class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom disable-select">

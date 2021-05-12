@@ -22,7 +22,7 @@
 <script src="Components/Home.js"></script>
 <script src="Components/js.cookie.min.js"></script>
 </head>
-<body class="text-dark">
+<body class="text-dark heromain">
 	<div class="container pt-3 font-light main-container">
 		<header
 			class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom disable-select">
@@ -41,14 +41,14 @@
 			<div class="container col-xl-10 col-xxl-8 px-4 py-5 main">
 				<div class="row align-items-center g-5 py-5">
 					<div class="col-lg-7 text-center text-lg-start disable-select"
-						id="hero">
+						id="heromain">
 						<h1 class="display-4 fw-bold lh-1 mb-3">Hey, there!</h1>
 						<p class="col-lg-10 fs-4">Glad to see an innovative mind. go
 							ahead and get signed in to get started. If you don't own a
 							GadgetBadget account yet, why wait? smash that sign up button to
 							get registered today.</p>
 					</div>
-					<div class="col-10 mx-auto col-lg-5">
+					<div class="col-10 mx-auto col-lg-5 text-dark">
 						<form id="loginform" name="loginform"
 							class="p-2 border rounded-3 bg-light">
 							<div class="form-floating mb-3">

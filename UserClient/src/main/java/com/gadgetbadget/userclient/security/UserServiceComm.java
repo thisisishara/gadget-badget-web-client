@@ -84,18 +84,43 @@ public class UserServiceComm {
 		JsonObject JSONoutput = new JsonParser().parse(output).getAsJsonObject();
 		return JSONoutput;
 	}
-	/*
-	public JsonObject getUsers(String absolutePath, HttpMethod httpMethod, JsonObject payload)
+	
+	//GET Accounts
+	public JsonObject getAccounts(String absolutePath, String AuthToken)
 	{
 		client = Client.create();
-		webRes = client.resource(PAYMENT_SERVICE_URI+absolutePath);
+		webRes = client.resource(USER_SERVICE_URI+absolutePath);
 
-		if(httpMethod == HttpMethod.GET) {
-			String output = webRes.header("Authorization", SERVICE_TOKEN_USR)
-					.get(String.class);
+		String output = webRes.header("Authorization", "JWT " + AuthToken)
+				.get(String.class);
 
-			return new JsonParser().parse(output).getAsJsonObject();
-		}
-		return null;
-	}*/
+		JsonObject JSONoutput = new JsonParser().parse(output).getAsJsonObject();
+		return JSONoutput;
+	}
+	
+	//PUT Account Status
+	public JsonObject putAccountStatus(String absolutePath, String AuthToken)
+	{
+		client = Client.create();
+		webRes = client.resource(USER_SERVICE_URI+absolutePath);
+
+		String output = webRes.header("Authorization", "JWT " + AuthToken)
+				.put(String.class);
+
+		JsonObject JSONoutput = new JsonParser().parse(output).getAsJsonObject();
+		return JSONoutput;
+	}
+	
+	//DELETE Accounts
+	public JsonObject deleteAccount(String absolutePath, String AuthToken)
+	{
+		client = Client.create();
+		webRes = client.resource(USER_SERVICE_URI+absolutePath);
+
+		String output = webRes.header("Authorization", "JWT " + AuthToken)
+				.delete(String.class);
+
+		JsonObject JSONoutput = new JsonParser().parse(output).getAsJsonObject();
+		return JSONoutput;
+	}
 }
