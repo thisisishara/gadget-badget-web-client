@@ -1,3 +1,8 @@
+//CLIENT COMPONENTS
+
+//-----------------------------------------------------------------------------------------------------------------------------
+//CONNECTOR--------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------
 //CHECK AUTH COOKIE ON PAGE LOAD
 //SET CONTENT VISIBILITY
 $(document).ready(function () {
@@ -22,7 +27,7 @@ $(document).ready(function () {
     });
 });
 
-//SIDEBAR ACTIVE LINK SET
+//SETTING SIDEBAR ACTIVE LINK
 $(document).on("click", ".nav-link", function (event) {
     $(".nav-link").removeClass("active");
     $(this).addClass("active");
@@ -45,7 +50,7 @@ $(document).on("click", ".nav-link", function (event) {
     }
 });
 
-//LOAD CONTENTS ON CLICK
+//LOAD CONTENTS ON SIDEBAR LINK CLICK
 function loadAdminDBContents() {
     $("#admindashboard").fadeIn();
 }
@@ -63,7 +68,7 @@ function loadAdminPSContents() {
     $("#adminprofsett").fadeIn();
 }
 
-//LOAD ACCOUNT LIST TO ACCOUNT SECURITY PAGE
+//LOAD ACCOUNT LIST TO ACCOUNT SECURITY PAGE FROM AccountsAPI DC BUS
 function loadAccountList() {
     $.ajax(
         {
@@ -87,7 +92,7 @@ function onLoadALComplete(response, status) {
     }
 }
 
-//LOAD USER ACCOUNT DETAILS
+//LOAD USER ACCOUNT DETAILS FROM UserClientAPI DC BUS
 function loadUserAccountDetails() {
     $.ajax(
         {
@@ -100,7 +105,7 @@ function loadUserAccountDetails() {
         });
 }
 
-//POST-ON TABLE LOAD RESPONSE HANDLING
+//USER TABLE LOAD RESPONSE HANDLING
 function onLoadUADComplete(response, status) {
     if (status == "success") {
         var resultSet = JSON.parse(response);
@@ -117,12 +122,13 @@ function onLoadUADComplete(response, status) {
     }
 }
 
-//TOAST
+//TOAST TEST EVENT HANDLER
 $(document).on("click", "#liveToastBtn", function (event) {
     $('.toast').toast('show');
 });
 
-//DASHBOARD LINKS----------------------------------------------------------------------------------------------
+//DASHBOARD PAGE LINKS EVENT HANDLING
+//Clicks relevent sidebar link on button clicks
 $(document).on("click", "#userdash", function (event) {
 	$( ".nav-link span:contains('User Management')" ).click();
 });
@@ -135,7 +141,8 @@ $(document).on("click", "#profiledash", function (event) {
 	$( ".nav-link span:contains('Profile Settings')" ).click();
 });
 
-//POST METHODS-------------------------------------------------------------------------------------------------
+//POST METHODS DC ENGINES TO Communicate wuth UserClientAPI DC BUS
+//HANDLING FORM SUBMISSIONS
 //SUBMIT CONSUMER FORM
 $(document).on("click", "#consumersignup", function (event) {
     //form validation
@@ -171,7 +178,7 @@ $(document).on("click", "#consumersignup", function (event) {
     }
 });
 
-//POST-CONSUMER RESPONSE HANDLING
+//POST-CONSUMER FORM SUBMISSION RESPONSE HANDLING
 function onConsumerSaveComplete(response, status) {
     if (status == "success") {
         var resultSet = JSON.parse(response);
@@ -457,7 +464,7 @@ function onEmployeeUpdateComplete(response, status) {
     $("#employeecancelupdate").click();
 }
 
-//UPDATE METHODS--------------------------------------------------------------------------------------------------------------
+//HANDLING USER UPDATE BUTTON CLICK EVENTS
 //UPDATE RESEARCHER
 $(document).on("click", "#researcherupdate", function (event) {
     //populate the form
@@ -581,7 +588,7 @@ $(document).on("click", "#employeecancelupdate", function (event) {
     $("#employeecancelupdate").addClass("invisible");
 });
 
-//DELETE METHODS---------------------------------------------------------------------------------------------------------------
+//USER DELETE BUTTON EVENT HANDLING + DC ENGINE
 //DELETE CONSUMER
 $(document).on("click", "#consumerdelete", function (event) {
     $.ajax(
@@ -726,6 +733,7 @@ function onEmployeeDeleteComplete(response, status) {
     }
 }
 
+//ACCOUNT DELETE BUTTON EVENT HANDLING + DC ENGINE (DC BUS: AccountsAPI)
 //DELETE ACCOUNT
 $(document).on("click", "#accountdelete", function (event) {
     $.ajax(
@@ -762,6 +770,7 @@ function onAccountDeleteComplete(response, status) {
     }
 }
 
+//ACCOUNT DE-ACTIVATION BUTTON EVENT HANDLING + DC ENGINE (DC BUS: AccountsAPI)
 //DEACTIVATE ACCOUNT
 $(document).on("click", "#accountactivation", function (event) {
     $.ajax(
@@ -798,58 +807,13 @@ function onAccountStatusUpdateComplete(response, status) {
     }
 }
 
-//PASSWORD VISIBILITY----------------------------------------------------------------------------------------------------------
-$(document).on("click", "#researchershowpasswords", function (event) {
-    if (this.checked) {
-        $("#researcherpassword").attr('type', 'text');
-        $("#researcherconfpassword").attr('type', 'text');
-        $("#researchershowpasswordicon").attr('src', 'Media/eyehide.png');
-    } else {
-        $("#researcherpassword").attr('type', 'password');
-        $("#researcherconfpassword").attr('type', 'password');
-        $("#researchershowpasswordicon").attr('src', 'Media/eye.png');
-    }
-});
+//----------------------------------------------------------------------------------------------------------------------------
+//CLIENT-MODEL----------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------
 
-$(document).on("click", "#employeeshowpasswords", function (event) {
-    if (this.checked) {
-        $("#employeepassword").attr('type', 'text');
-        $("#employeeconfpassword").attr('type', 'text');
-        $("#employeeshowpasswordicon").attr('src', 'Media/eyehide.png');
-    } else {
-        $("#employeepassword").attr('type', 'password');
-        $("#employeeconfpassword").attr('type', 'password');
-        $("#employeeshowpasswordicon").attr('src', 'Media/eye.png');
-    }
-});
-
-$(document).on("click", "#consumershowpasswords", function (event) {
-    if (this.checked) {
-        $("#consumerpassword").attr('type', 'text');
-        $("#consumerconfpassword").attr('type', 'text');
-        $("#consumershowpasswordicon").attr('src', 'Media/eyehide.png');
-    } else {
-        $("#consumerpassword").attr('type', 'password');
-        $("#consumerconfpassword").attr('type', 'password');
-        $("#consumershowpasswordicon").attr('src', 'Media/eye.png');
-    }
-});
-
-$(document).on("click", "#fundershowpasswords", function (event) {
-    if (this.checked) {
-        $("#funderpassword").attr('type', 'text');
-        $("#funderconfpassword").attr('type', 'text');
-        $("#fundershowpasswordicon").attr('src', 'Media/eyehide.png');
-    } else {
-        $("#funderpassword").attr('type', 'password');
-        $("#funderconfpassword").attr('type', 'password');
-        $("#fundershowpasswordicon").attr('src', 'Media/eye.png');
-    }
-});
-
-//CLIENT-MODEL-----------------------------------------------------------------------------------------------------------------
+//FORM VALIDATION HANDLERS
+//CONSUMER FORM VALIDATIONS
 function validateConsumerForm() {
-    //VALIDATIONS
     if ($("#consumerusername").val().trim() == "") {
         return "Username cannot be empty.";
     }
@@ -894,8 +858,8 @@ function validateConsumerForm() {
     return true;
 }
 
-function validateFunderForm() {
-    //VALIDATIONS    
+//FUNDER FORM VALIDATIONS
+function validateFunderForm() { 
     if ($("#funderusername").val().trim() == "") {
         return "Username cannot be empty.";
     }
@@ -945,8 +909,8 @@ function validateFunderForm() {
     return true;
 }
 
+//RESEARCHER FORM VALIDATIONS
 function validateResearcherForm() {
-    //VALIDATIONS
     if ($("#researcherusername").val().trim() == "") {
         return "Username cannot be empty.";
     }
@@ -1012,8 +976,8 @@ function validateResearcherForm() {
     return true;
 }
 
+//EMPLOYEE FORM VALIDATIONS
 function validateEmployeeForm() {
-    //VALIDATIONS
     if ($("#employeeusername").val().trim() == "") {
         return "Username cannot be empty.";
     }
@@ -1083,6 +1047,61 @@ function validateEmployeeForm() {
     return true;
 }
 
+//PASSWORD VISIBILITY TOGGLE BUTTON EVENT HANDLING FOR SHOW/HIDE PASSWORDS
+//RESEARCHER FORM PASSWORDS VISIBILITY
+$(document).on("click", "#researchershowpasswords", function (event) {
+    if (this.checked) {
+        $("#researcherpassword").attr('type', 'text');
+        $("#researcherconfpassword").attr('type', 'text');
+        $("#researchershowpasswordicon").attr('src', 'Media/eyehide.png');
+    } else {
+        $("#researcherpassword").attr('type', 'password');
+        $("#researcherconfpassword").attr('type', 'password');
+        $("#researchershowpasswordicon").attr('src', 'Media/eye.png');
+    }
+});
+
+//EMPLOYEE FORM PASSWORDS VISIBILITY
+$(document).on("click", "#employeeshowpasswords", function (event) {
+    if (this.checked) {
+        $("#employeepassword").attr('type', 'text');
+        $("#employeeconfpassword").attr('type', 'text');
+        $("#employeeshowpasswordicon").attr('src', 'Media/eyehide.png');
+    } else {
+        $("#employeepassword").attr('type', 'password');
+        $("#employeeconfpassword").attr('type', 'password');
+        $("#employeeshowpasswordicon").attr('src', 'Media/eye.png');
+    }
+});
+
+//CONSUMER FORM PASSWORDS VISIBILITY
+$(document).on("click", "#consumershowpasswords", function (event) {
+    if (this.checked) {
+        $("#consumerpassword").attr('type', 'text');
+        $("#consumerconfpassword").attr('type', 'text');
+        $("#consumershowpasswordicon").attr('src', 'Media/eyehide.png');
+    } else {
+        $("#consumerpassword").attr('type', 'password');
+        $("#consumerconfpassword").attr('type', 'password');
+        $("#consumershowpasswordicon").attr('src', 'Media/eye.png');
+    }
+});
+
+//FUNDER FORM PASSWORDS VISIBILITY
+$(document).on("click", "#fundershowpasswords", function (event) {
+    if (this.checked) {
+        $("#funderpassword").attr('type', 'text');
+        $("#funderconfpassword").attr('type', 'text');
+        $("#fundershowpasswordicon").attr('src', 'Media/eyehide.png');
+    } else {
+        $("#funderpassword").attr('type', 'password');
+        $("#funderconfpassword").attr('type', 'password');
+        $("#fundershowpasswordicon").attr('src', 'Media/eye.png');
+    }
+});
+
+//GENERIC METHOD TO BUILDING DIFFERENT STYLES OF TOASTS
+//STYLES ARE PASSED AS PARAMS
 function buildToast(bg, heading, body, time, icon) {
     $("#liveToast").removeClass();
     $("#liveToast").addClass("toast hide text-white " + bg);
@@ -1094,6 +1113,7 @@ function buildToast(bg, heading, body, time, icon) {
     $("#liveToastBody").text(body);
 }
 
+//INSPECTING COOKIES FOR USER AUTHENTICATION
 function isAuthenticated() {
     //check auth cookie
     if (Cookies.get('gadgetbadget-auth') == undefined) {
