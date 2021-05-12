@@ -82,7 +82,53 @@
 						<!-- DASH HEADER CONTENTS -->
 					</div>
 				</div>
-				<div>Refer "User Management" link to Manage Users.</div>
+				<!-- <div>Refer "User Management" link to Manage Users.</div>-->
+				<div class="container">
+					<div class="col-md-12 mb-4">
+						<div class="h-100 p-4 text-white bg-dark rounded-3 bgsec">
+							<div class="row">
+								<div class="col-md-10 px-4">
+									<h2>Users</h2>
+									<p>Manage user accounts easily. All accounts are
+										categorized according to the type making it easier to do the
+										necessary changes then and there.</p>
+									<button class="btn btn-outline-light" type="button" id="userdash">Manage</button>
+								</div>
+								<div class="col-md-2 text-center align-self-center">
+									<img class="my-auto" src="Media/usermgmt.png">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 mb-4">
+						<div class="h-100 p-4 text-white bg-dark rounded-3 bgsec">
+							<div class="row">
+								<div class="col-md-10 px-4">
+									<h2>Security</h2>
+									<p>Security is a must. Have control over the accounts. Deactivate vulnerable accounts with just one click.</p>
+									<button class="btn btn-outline-light" type="button" id="securitydash">Manage</button>
+								</div>
+								<div class="col-md-2 text-center align-self-center">
+									<img class="my-auto" src="Media/touchid.png">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 mb-4">
+						<div class="h-100 p-4 text-white bg-dark rounded-3 bgsec">
+							<div class="row">
+								<div class="col-md-10 px-4">
+									<h2>Profile</h2>
+									<p>Personalize your settings and preferences. Whatever you do, just be you.</p>
+									<button class="btn btn-outline-light" type="button" id="profiledash">Manage</button>
+								</div>
+								<div class="col-md-2 text-center align-self-center">
+									<img class="my-auto" src="Media/phy.png">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="row sidebarpage" id="adminusermgmt">
 				<div
@@ -556,14 +602,7 @@
 					class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 					<h1 class="h2">Account Security</h1>
 					<div class="btn-toolbar mb-2 mb-md-0">
-						<!-- <div class="btn-group me-2">
-							<button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-							<button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-						</div>
-						<button type="button"
-							class="btn btn-sm btn-outline-secondary dropdown-toggle">
-							<span data-feather="calendar"></span> This week
-						</button> -->
+						<!-- TOOLBAR IS EMPTY -->
 					</div>
 				</div>
 				<div class="accountsGrid" id="accountsGrid">
@@ -576,12 +615,12 @@
 					<h1 class="h2">Profile Settings</h1>
 					<div class="btn-toolbar mb-2 mb-md-0">
 						<!-- <div class="btn-group me-2">
-							<button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-							<button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+							<button type="button" class="btn btn-sm btn-outline-secondary">Profile Settings</button>
+							<button type="button" class="btn btn-sm btn-outline-secondary">Privacy</button>
 						</div>
 						<button type="button"
 							class="btn btn-sm btn-outline-secondary dropdown-toggle">
-							<span data-feather="calendar"></span> This week
+							<span data-feather="type"></span> Change Type
 						</button> -->
 					</div>
 				</div>

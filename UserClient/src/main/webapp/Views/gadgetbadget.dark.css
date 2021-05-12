@@ -210,3 +210,12 @@ table tr td:last-child, table tr th:last-child {
 	
 	/*url("../Media/dashboardpcsm2.png")*/
 }
+
+.bgsec {
+	background:
+		linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5) ), url("../Media/greenlabbg.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}

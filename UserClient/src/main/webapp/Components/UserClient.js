@@ -122,6 +122,19 @@ $(document).on("click", "#liveToastBtn", function (event) {
     $('.toast').toast('show');
 });
 
+//DASHBOARD LINKS----------------------------------------------------------------------------------------------
+$(document).on("click", "#userdash", function (event) {
+	$( ".nav-link span:contains('User Management')" ).click();
+});
+
+$(document).on("click", "#securitydash", function (event) {
+	$( ".nav-link span:contains('Account Security')" ).click();
+});
+
+$(document).on("click", "#profiledash", function (event) {
+	$( ".nav-link span:contains('Profile Settings')" ).click();
+});
+
 //POST METHODS-------------------------------------------------------------------------------------------------
 //SUBMIT CONSUMER FORM
 $(document).on("click", "#consumersignup", function (event) {
